@@ -19,7 +19,7 @@ $book_list=$book_controller->getAllBooks();
                 }
             ?>
             <div class="col-md-2">
-                <a href="create_book.php" class="btn btn-dark">Add New Book</a>
+                <a href="createBook.php" class="btn btn-dark">Add New Book</a>
             </div>
         </div>
 		<div class="row">
