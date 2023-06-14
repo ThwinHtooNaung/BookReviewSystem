@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    console.log('hello')
     $(document).on('click','.delete_user',function(){
         
         console.log(111)
@@ -24,11 +23,9 @@ $(document).ready(function(){
     })
     $(document).on('click','.delete_book',function(){
         
-        console.log(111)
         let status=confirm('Are you sure want to delete')
         let tr=$(this).parent().parent();
         let id=tr.attr('id');
-        console.log(id)
         if (status) {
             $.ajax({
                 method: 'post',
@@ -50,7 +47,6 @@ $(document).ready(function(){
         let status=confirm('Are you sure want to delete')
         let tr=$(this).parent().parent();
         let id=tr.attr('id');
-        console.log(id)
         if (status) {
             $.ajax({
                 method: 'post',
@@ -60,7 +56,6 @@ $(document).ready(function(){
                     
                     console.log(response)
                     if (response = "success") {
-                        console.log(response)
                         location.href="auther.php"
                     }
                 }
@@ -69,18 +64,17 @@ $(document).ready(function(){
     })
     $(document).on('click','.open',function(){
         let id=$(this).attr('id')
-        console.log(id)
-        if(status){
             $.ajax({
                 method:'post',
                 url: 'openPdf.php',
                 data:{id:id},
                 success:function(response){
-                    window.open(response, '_blank');
+                    let pdfUrl='pdf/'+response;
+                    
+                    window.open(pdfUrl,'_blank')
                 }
             })
-        }
-            
-        
     })
+    
+    
 })

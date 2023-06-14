@@ -1,11 +1,9 @@
 <?php
-$file='pdf/sample.pdf';
-$filename = 'pdf/sample.pdf';
+include_once "controller/bookController.php";
+$id=$_POST['id'];
+$book_controller=new bookController();
+$book=$book_controller->getBook($id);
+echo $book['pdf_file'];
 
-header('Content-type: application/pdf');
-header('Content-Disposition: inline; filename="' . $filename . '"');
-header('Content-Transfer-Encoding: binary');
-header('Accept-Ranges: bytes');
-// second
-@readfile($file);
+
 ?>

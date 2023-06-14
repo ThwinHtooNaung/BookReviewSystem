@@ -3,7 +3,7 @@
 class Database{
     private static $host="localhost";
     private static $username="root";
-    private static $dbname="neon";
+    private static $dbname="neon-1.1";
     private static $password="";
     private static $connection="";
 

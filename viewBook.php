@@ -5,7 +5,7 @@ include_once "controller/BookController.php";
 $cid=$_GET['id'];
 $book_controller=new BookController();
 $book=$book_controller->getBook($cid);
-
+echo $cid;
 ?>
 
 
@@ -21,6 +21,7 @@ $book=$book_controller->getBook($cid);
                         <h4 class="card-title"><strong><?php echo $book['category_name'] ?></h3>
                         <h4 class="card-title"><strong><?php echo $book['auther_name'] ?></h3>
                         <button class="btn btn-primary open" id="<?php  echo $cid ?>">Read</button>
+                        <button class="btn btn-primary comment" id="<?php  echo $cid ?>">Comment</button>
                         
                 </div>
         </div>
